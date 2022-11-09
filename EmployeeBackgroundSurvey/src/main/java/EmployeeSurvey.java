@@ -25,7 +25,7 @@ public class EmployeeSurvey {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<Employee> employees = new ArrayList<>();
+        //List<Employee> employees = new ArrayList<>();
         Employee employee = null;
         String quit;
 
@@ -70,18 +70,18 @@ public class EmployeeSurvey {
 
             employee.setProgrammingSkill(programmingSkills);
 
-            employees.add(employee);
+            //employees.add(employee);
 
             System.out.println("Add more survey info? [Y/n]: ");
             quit = scanner.next();
         }while (!quit.equals("n"));
 
-        System.out.println(employees.size());
+        //System.out.println(employees.size());
 
-        covertToJson(employees);
+        covertToJson(employee);
     }
 
-    private static void covertToJson(List<Employee> employees) {
+    private static void covertToJson(Employee employees) {
         Gson gson = new Gson();
         String s = gson.toJson(employees);
         System.out.println(s);
